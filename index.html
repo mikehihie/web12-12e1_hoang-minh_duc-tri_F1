@@ -3,245 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formula 1: The Ultimate Guide (2025 Edition)</title>
+    <title>Trang Chủ - F1 Guide 2025</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <nav>
-        <div class="logo">F1</div>
+        <a href="index.html" class="logo-container">
+            <img class="f1-logo-svg" src="/asset/img/F1.svg.png" alt="F1 Logo">
+            <div class="logo"></div>
+        </a>
         <ul>
-            <li><a href="#season">2025 Grid</a></li>
-            <li><a href="#calendar">Calendar</a></li>
-            <li><a href="#rules">Rules & Flags</a></li>
-            <li><a href="#tech">Car Specs</a></li>
-            <li><a href="#history">History</a></li>
+            <li><a href="teams.html">Đội Đua</a></li>
+            <li><a href="calendar.html">Lịch Trình</a></li>
+            <li><a href="rules.html">Luật & Cờ</a></li>
+            <li><a href="tech.html">Kỹ Thuật</a></li>
+            <li><a href="history.html">Lịch Sử</a></li>
         </ul>
     </nav>
 
     <header>
-        <h1>The Pinnacle of Motorsport</h1>
-        <p>Comprehensive guide to the 2025 Formula 1 Season, Technical Regulations, and History.</p>
-        <a href="#season" class="btn">View 2025 Teams</a>
-    </header>
-
-    <section id="season">
-        <h2>2025 Teams & Drivers</h2>
-        <p style="margin-bottom: 20px;">The 2025 grid features major shake-ups, including Lewis Hamilton at Ferrari and rookie sensation Kimi Antonelli at Mercedes.</p>
-        
-        <div class="grid-container">
-            <div class="team-card" style="--team-color: #e10600;">
-                <h3>Ferrari</h3>
-                <div class="driver"><span>16</span> Charles Leclerc</div>
-                <div class="driver"><span>44</span> Lewis Hamilton</div>
-            </div>
-            
-            <div class="team-card" style="--team-color: #3671C6;">
-                <h3>Red Bull Racing</h3>
-                <div class="driver"><span>1</span> Max Verstappen</div>
-                <div class="driver"><span>22</span> Yuki Tsunoda*</div>
-                <div class="note">*Replaced L. Lawson after Round 2</div>
-            </div>
-
-            <div class="team-card" style="--team-color: #00d2be;">
-                <h3>Mercedes</h3>
-                <div class="driver"><span>63</span> George Russell</div>
-                <div class="driver"><span>12</span> Kimi Antonelli (R)</div>
-            </div>
-
-            <div class="team-card" style="--team-color: #ff8700;">
-                <h3>McLaren</h3>
-                <div class="driver"><span>4</span> Lando Norris</div>
-                <div class="driver"><span>81</span> Oscar Piastri</div>
-            </div>
-
-            <div class="team-card" style="--team-color: #006F62;">
-                <h3>Aston Martin</h3>
-                <div class="driver"><span>14</span> Fernando Alonso</div>
-                <div class="driver"><span>18</span> Lance Stroll</div>
-            </div>
-
-            <div class="team-card" style="--team-color: #00A0DE;">
-                <h3>Alpine</h3>
-                <div class="driver"><span>10</span> Pierre Gasly</div>
-                <div class="driver"><span>#</span> Jack Doohan (R)</div>
-            </div>
-
-            <div class="team-card" style="--team-color: #666;">
-                <h3>Haas</h3>
-                <div class="driver"><span>31</span> Esteban Ocon</div>
-                <div class="driver"><span>87</span> Oliver Bearman (R)</div>
-            </div>
-
-             <div class="team-card" style="--team-color: #00e000;">
-                <h3>Kick Sauber (Audi)</h3>
-                <div class="driver"><span>27</span> Nico Hulkenberg</div>
-                <div class="driver"><span>#</span> Gabriel Bortoleto (R)</div>
-            </div>
-
-            <div class="team-card" style="--team-color: #64C4FF;">
-                <h3>Williams</h3>
-                <div class="driver"><span>23</span> Alexander Albon</div>
-                <div class="driver"><span>55</span> Carlos Sainz</div>
-            </div>
-
-            <div class="team-card" style="--team-color: #1f2d57;">
-                <h3>Racing Bulls (VCARB)</h3>
-                <div class="driver"><span>30</span> Liam Lawson*</div>
-                <div class="driver"><span>#</span> Isack Hadjar (R)</div>
-                 <div class="note">*Returned to RB after Round 2 swap</div>
-            </div>
+        <h1>Đỉnh Cao Đua Xe Thể Thao</h1>
+        <p>Hướng dẫn chi tiết về Mùa giải Formula 1 2025, Quy định Kỹ thuật và Lịch sử.</p>
+        <div style="margin-top: 20px;">
+            <a href="teams.html" class="btn">Xem Các Đội Đua</a>
+            <a href="calendar.html" class="btn" id="btn2" >Xem Lịch Thi Đấu</a>
         </div>
-    </section>
+    </header> <div id="global-footer"></div>
+    <script src="/asset/JS/main.js"></script>
 
-    <section id="calendar">
-        <h2>2025 Race Calendar</h2>
-        <p>A record-breaking 24-race season starting in Australia and ending in Abu Dhabi.</p>
-        <div style="overflow-x:auto;">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Round</th>
-                        <th>Date</th>
-                        <th>Grand Prix</th>
-                        <th>Circuit</th>
-                        <th>Format</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>Mar 16</td><td>Australia</td><td>Albert Park</td><td>Standard</td></tr>
-                    <tr><td>2</td><td>Mar 23</td><td>China</td><td>Shanghai</td><td><span class="sprint-badge">SPRINT</span></td></tr>
-                    <tr><td>3</td><td>Apr 06</td><td>Japan</td><td>Suzuka</td><td>Standard</td></tr>
-                    <tr><td>4</td><td>Apr 13</td><td>Bahrain</td><td>Sakhir</td><td>Standard</td></tr>
-                    <tr><td>5</td><td>Apr 20</td><td>Saudi Arabia</td><td>Jeddah</td><td>Standard</td></tr>
-                    <tr><td>6</td><td>May 04</td><td>Miami</td><td>Miami Autodrome</td><td><span class="sprint-badge">SPRINT</span></td></tr>
-                    <tr><td>7</td><td>May 18</td><td>Emilia Romagna</td><td>Imola</td><td>Standard</td></tr>
-                    <tr><td>8</td><td>May 25</td><td>Monaco</td><td>Monaco</td><td>Standard</td></tr>
-                    <tr><td>9</td><td>Jun 01</td><td>Spain</td><td>Barcelona</td><td>Standard</td></tr>
-                    <tr><td>10</td><td>Jun 15</td><td>Canada</td><td>Montreal</td><td>Standard</td></tr>
-                    <tr><td>11</td><td>Jun 29</td><td>Austria</td><td>Red Bull Ring</td><td>Standard</td></tr>
-                    <tr><td>12</td><td>Jul 06</td><td>United Kingdom</td><td>Silverstone</td><td>Standard</td></tr>
-                    <tr><td>13</td><td>Jul 27</td><td>Belgium</td><td>Spa-Francorchamps</td><td><span class="sprint-badge">SPRINT</span></td></tr>
-                    <tr><td>14</td><td>Aug 03</td><td>Hungary</td><td>Hungaroring</td><td>Standard</td></tr>
-                    <tr><td>15</td><td>Aug 31</td><td>Netherlands</td><td>Zandvoort</td><td>Standard</td></tr>
-                    <tr><td>16</td><td>Sep 07</td><td>Italy</td><td>Monza</td><td>Standard</td></tr>
-                    <tr><td>17</td><td>Sep 21</td><td>Azerbaijan</td><td>Baku</td><td>Standard</td></tr>
-                    <tr><td>18</td><td>Oct 05</td><td>Singapore</td><td>Marina Bay</td><td>Standard</td></tr>
-                    <tr><td>19</td><td>Oct 19</td><td>USA (Austin)</td><td>COTA</td><td><span class="sprint-badge">SPRINT</span></td></tr>
-                    <tr><td>20</td><td>Oct 26</td><td>Mexico</td><td>Mexico City</td><td>Standard</td></tr>
-                    <tr><td>21</td><td>Nov 09</td><td>Brazil</td><td>Interlagos</td><td><span class="sprint-badge">SPRINT</span></td></tr>
-                    <tr><td>22</td><td>Nov 22</td><td>Las Vegas</td><td>Las Vegas Strip</td><td>Standard (Sat Race)</td></tr>
-                    <tr><td>23</td><td>Nov 30</td><td>Qatar</td><td>Lusail</td><td><span class="sprint-badge">SPRINT</span></td></tr>
-                    <tr><td>24</td><td>Dec 07</td><td>Abu Dhabi</td><td>Yas Marina</td><td>Standard</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section id="rules">
-        <div class="rules-grid">
-            <div>
-                <h2>Race Weekend Formats</h2>
-                <h3>Standard Weekend</h3>
-                <ul>
-                    <li><strong>Friday:</strong> FP1 & FP2 (60 min each)</li>
-                    <li><strong>Saturday:</strong> FP3 (60 min) & Qualifying</li>
-                    <li><strong>Sunday:</strong> The Grand Prix (Min 305km)</li>
-                </ul>
-                <br>
-                <h3>Sprint Weekend</h3>
-                <ul>
-                    <li><strong>Friday:</strong> FP1 & Sprint Qualifying</li>
-                    <li><strong>Saturday:</strong> Sprint Race (100km) & Main Qualifying</li>
-                    <li><strong>Sunday:</strong> The Grand Prix</li>
-                </ul>
-                <br>
-                <h3>Points System (Top 10)</h3>
-                <p>1st: 25 | 2nd: 18 | 3rd: 15 | 4th: 12 | 5th: 10 | 6th: 8 | 7th: 6 | 8th: 4 | 9th: 2 | 10th: 1</p>
-                <p><em>+1 Point for Fastest Lap (if inside Top 10, removed in some regulations but active for 2025).</em></p>
-            </div>
-
-            <div>
-                <h2>Flags & Safety</h2>
-                <div class="flag-container">
-                    <div class="flag-item">
-                        <div class="flag-icon" style="background:green;"></div>
-                        <span><strong>Green:</strong> Track Clear / Race Start</span>
-                    </div>
-                    <div class="flag-item">
-                        <div class="flag-icon" style="background:yellow;"></div>
-                        <span><strong>Yellow:</strong> Hazard ahead. Single: Slow down. Double: Be prepared to stop.</span>
-                    </div>
-                    <div class="flag-item">
-                        <div class="flag-icon" style="background:red;"></div>
-                        <span><strong>Red:</strong> Session Stopped (Bad weather/Crash).</span>
-                    </div>
-                    <div class="flag-item">
-                        <div class="flag-icon" style="background:blue;"></div>
-                        <span><strong>Blue:</strong> Let faster car overtake (you are being lapped).</span>
-                    </div>
-                    <div class="flag-item">
-                        <div class="flag-icon" style="background:black;"></div>
-                        <span><strong>Black:</strong> Disqualified. Return to pits.</span>
-                    </div>
-                     <div class="flag-item">
-                        <div class="flag-icon" style="background:conic-gradient(#fff 90deg, #000 90deg 180deg, #fff 180deg 270deg, #000 270deg);"></div>
-                        <span><strong>Chequered:</strong> End of race/session.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tech">
-        <h2>The 2025 F1 Car</h2>
-        <p>F1 cars are the most technologically advanced racing machines on earth. The 2025 cars are the final evolution of the current "ground effect" era before the massive 2026 rule changes.</p>
-        
-        <div class="rules-grid" style="margin-top: 30px;">
-            <div>
-                <h3>Technical Specs</h3>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><strong>Power Unit:</strong> 1.6L V6 Turbo Hybrid (~1000 HP)</li>
-                    <li><strong>Weight:</strong> Minimum ~798kg (including driver)</li>
-                    <li><strong>Top Speed:</strong> ~360 km/h (223 mph)</li>
-                    <li><strong>0-100 km/h:</strong> ~2.5 seconds</li>
-                    <li><strong>G-Force:</strong> Up to 6G in corners</li>
-                    <li><strong>Fuel:</strong> E10 Sustainable Fuel Blend</li>
-                </ul>
-            </div>
-
-            <div>
-                <h3>Tyres (Pirelli)</h3>
-                <p>For 2025, Pirelli introduces a new ultra-soft "C6" compound for street tracks.</p>
-                <div class="tyre-row">
-                    <div class="tyre c1">HARD<br>C1</div>
-                    <div class="tyre c3-med">MED<br>C3</div>
-                    <div class="tyre c5">SOFT<br>C5</div>
-                    <div class="tyre c6">ULTRA<br>C6</div>
-                </div>
-                <p class="note" style="margin-top:10px;">*At each race, Pirelli selects 3 compounds (e.g., C3, C4, C5) to be Hard (White), Medium (Yellow), and Soft (Red).</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="history">
-        <h2>Brief History</h2>
-        <p>Formula 1 began in <strong>1950</strong> at Silverstone, UK. It has evolved through several iconic eras:</p>
-        <ul style="margin-left: 20px; margin-top: 15px;">
-            <li><strong>1950s:</strong> The birth of the championship. Dominance by Fangio and Alfa Romeo/Mercedes.</li>
-            <li><strong>1960s:</strong> The "Garagistes" and the move to mid-engine cars. Jim Clark & Lotus.</li>
-            <li><strong>1970s:</strong> Aerodynamics and wings appear. The dangerous rivalry of Lauda vs Hunt.</li>
-            <li><strong>1980s:</strong> The Turbo Era. Massive horsepower (1000HP+) and the Senna vs Prost rivalry.</li>
-            <li><strong>1990s:</strong> Electronic aids (active suspension) and Michael Schumacher's rise.</li>
-            <li><strong>2000s:</strong> V10 screaming engines and Ferrari/Schumacher dominance.</li>
-            <li><strong>2014-Present:</strong> The Hybrid Era. Mercedes dominance followed by the Verstappen/Red Bull era.</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Formula 1 Guide. This is a fan-made educational website.</p>
-        <p class="note">F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trademarks of Formula One Licensing B.V.</p>
-    </footer>
 
 </body>
 </html>
