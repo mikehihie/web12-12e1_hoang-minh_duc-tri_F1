@@ -459,3 +459,122 @@ footer {
 }
 
 
+
+/* --- Tech Details Sections --- */
+.tech-details-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.tech-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--f1-gray);
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid var(--f1-red);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+    /* Ensure content stays within bounds */
+    overflow: hidden;
+}
+
+/* Stagger animations */
+.tech-section:nth-child(1) { animation-delay: 0.1s; }
+.tech-section:nth-child(2) { animation-delay: 0.3s; }
+.tech-section:nth-child(3) { animation-delay: 0.5s; }
+
+.tech-section:nth-child(even) {
+    flex-direction: row-reverse;
+    border-left: none;
+    border-right: 5px solid var(--f1-red);
+}
+
+.tech-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.tech-content {
+    flex: 1;
+}
+
+.tech-content h3 {
+    margin-bottom: 20px;
+    color: var(--f1-red);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tech-content ul {
+    list-style: none;
+}
+
+.tech-content li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.tech-content li::before {
+    content: "•";
+    color: var(--f1-red);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.tech-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    /* Make sure image container has a height */
+    min-height: 250px;
+    background-color: #000;
+}
+
+.tech-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.tech-section:hover .tech-image img {
+    transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive for Tech Sections */
+@media (max-width: 768px) {
+    .tech-section, .tech-section:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .tech-image {
+        width: 100%;
+        margin-top: 20px;
+        min-height: 200px;
+    }
+}
