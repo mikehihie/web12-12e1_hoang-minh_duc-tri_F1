@@ -63,7 +63,7 @@ function highlightActiveLink() {
 }
 
 // --- 4. CHẠY CODE KHI TRANG TẢI XONG ---
-document.addEventListener("DOMContentLoaded", function() {
+function initMain() {
     
     // A. Chèn Nav
     const navPlaceholder = document.getElementById("global-nav");
@@ -95,19 +95,34 @@ document.addEventListener("DOMContentLoaded", function() {
         const lightboxImg = document.getElementById("lightbox-img");
         const captionText = document.getElementById("caption");
         const closeBtn = document.querySelector(".close");
-        const galleryItems = document.querySelectorAll(".gallery-item img");
+        const galleryItems = document.querySelectorAll(".gallery-item");
 
-        galleryItems.forEach(img => {
-            img.onclick = function() {
-                lightbox.style.display = "flex";
-                lightboxImg.src = this.src;
-                captionText.innerHTML = this.alt;
-            }
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const title = this.querySelector('.gallery-title');
+
+                if (img && title) {
+                    lightbox.style.display = "flex";
+                    lightboxImg.src = img.src;
+                    captionText.innerText = title.innerText;
+                }
+            });
         });
 
-        closeBtn.onclick = function() { lightbox.style.display = "none"; }
+        if (closeBtn) {
+            closeBtn.onclick = function() { lightbox.style.display = "none"; }
+        }
+
         lightbox.onclick = function(e) {
             if(e.target !== lightboxImg) { lightbox.style.display = "none"; }
         }
     }
-});
+
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", initMain);
+} else {
+    initMain();
+}
