@@ -2,24 +2,49 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Lịch Sử - F1 Guide</title>
+    <title>Thư viện - F1</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="global-nav"></div>
 
     <main>
-        <h2>Lịch Sử Tóm Tắt</h2>
-        <p>Formula 1 bắt đầu vào năm <strong>1950</strong> tại Silverstone, Anh.</p>
-        <ul style="margin-left: 20px; margin-top: 15px;">
-            <li><strong>Thập niên 50:</strong> Fangio & Alfa Romeo.</li>
-            <li><strong>Thập niên 60:</strong> Kỷ nguyên động cơ đặt giữa.</li>
-            <li><strong>Thập niên 70:</strong> Khí động học & Cánh gió. Lauda vs Hunt.</li>
-            <li><strong>Thập niên 80:</strong> Kỷ nguyên Turbo. Senna vs Prost.</li>
-            <li><strong>Thập niên 90:</strong> Michael Schumacher trỗi dậy.</li>
-            <li><strong>Thập niên 2000:</strong> V10 & Sự thống trị của Ferrari.</li>
-            <li><strong>2014-Nay:</strong> Kỷ nguyên Hybrid & Max Verstappen.</li>
-        </ul>
+<h2>Khoảnh Khắc Đường Đua</h2>
+        <p>Những hình ảnh ấn tượng nhất của mùa giải.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="/asset/img/p1.webp" alt="F1 Car 1">
+                <div class="overlay">GP Bahrain Start</div>
+            </div>
+            <div class="gallery-item">
+                <img src="/asset/img/p2.webp" alt="F1 Car 2">
+                <div class="overlay">Monaco Grand Prix</div>
+            </div>
+            <div class="gallery-item">
+                <img src="/asset/img/p3.webp" alt="F1 Car 3">
+                <div class="overlay">Silverstone Crowd</div>
+            </div>
+            <div class="gallery-item">
+                <img src="/asset/img/p4.webp" alt="F1 Car 4">
+                <div class="overlay">Pit Stop Action</div>
+            </div>
+            <div class="gallery-item">
+                <img src="/asset/img/p5.webp" alt="F1 Car 5">
+                <div class="overlay">Winner Podium</div>
+            </div>
+            <div class="gallery-item">
+                <img src="/asset/img/p6.webp" alt="F1 Car 6">
+                <div class="overlay">Night Race</div>
+            </div>
+        </div>
+    </main>
+    
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="caption"></div>
+    </div>
     </main>
 <div id="global-footer"></div>
     <script src="/asset/JS/main.js"></script>

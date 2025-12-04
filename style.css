@@ -209,6 +209,8 @@ tr:hover { background-color: #444; }
 .tyre.c1, .tyre.c2, .tyre.c3 { border-color: white; }
 .tyre.c3-med, .tyre.c4 { border-color: yellow; color: yellow; }
 .tyre.c5, .tyre.c6 { border-color: var(--f1-red); color: var(--f1-red); }
+.tyre.wet { border-color: blue; color: blue; }
+.tyre.inter { border-color: green; color: green; }
 
 footer {
     text-align: center;
