@@ -1,6 +1,6 @@
 /* main.js */
 
-// --- 1. ĐỊNH NGHĨA HTML CHO NAV (MENU) ---
+// NAV
 const navComponent = `
     <nav>
         <a href="index.html" class="logo-container">
@@ -17,7 +17,7 @@ const navComponent = `
     </nav>
 `;
 
-// --- 2. ĐỊNH NGHĨA HTML CHO FOOTER ---
+// footer
 const footerComponent = `
     <section id="contact" style="border-top: 1px solid var(--f1-gray);">
         <h2>Liên Hệ & Góp Ý</h2>
@@ -48,7 +48,7 @@ const footerComponent = `
     </footer>
 `;
 
-// --- 3. HÀM TỰ ĐỘNG HIGHLIGHT LINK ĐANG XEM ---
+// nav link active highlight
 function highlightActiveLink() {
     const currentPage = window.location.pathname.split("/").pop(); // Lấy tên file (vd: teams.html)
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -62,7 +62,7 @@ function highlightActiveLink() {
     });
 }
 
-// --- 4. CHẠY CODE KHI TRANG TẢI XONG ---
+// Hàm khởi tạo chính
 function initMain() {
     
     // A. Chèn Nav
