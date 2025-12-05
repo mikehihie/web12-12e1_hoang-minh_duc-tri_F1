@@ -164,3 +164,60 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// --- 4. XỬ LÝ CAROUSEL (SLIDER) ---
+    const carouselSlide = document.querySelector('.carousel-slide');
+    const carouselImages = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('#prevBtn');
+    const nextBtn = document.querySelector('#nextBtn');
+
+    // Chỉ chạy nếu trang hiện tại có carousel
+    if (carouselSlide && carouselImages.length > 0) {
+        let counter = 0;
+        const size = carouselImages[0].clientWidth; // Lấy chiều rộng 1 ảnh
+
+        // Hàm chuyển slide
+        function updateSlide() {
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        }
+
+        // Nút Next
+        nextBtn.addEventListener('click', () => {
+            if (counter >= carouselImages.length - 1) {
+                counter = 0; // Quay về đầu
+            } else {
+                counter++;
+            }
+            updateSlide();
+        });
+
+        // Nút Prev
+        prevBtn.addEventListener('click', () => {
+            if (counter <= 0) {
+                counter = carouselImages.length - 1; // Nhảy xuống cuối
+            } else {
+                counter--;
+            }
+            updateSlide();
+        });
+
+        // Tự động chạy sau mỗi 5 giây
+        setInterval(() => {
+            if (counter >= carouselImages.length - 1) {
+                counter = 0;
+            } else {
+                counter++;
+            }
+            updateSlide();
+        }, 5000);
+
+        // Cập nhật lại kích thước khi co giãn màn hình (Responsive)
+        window.addEventListener('resize', () => {
+            carouselSlide.style.transition = "none"; // Tắt hiệu ứng để không bị giật khi resize
+            const newSize = carouselImages[0].clientWidth;
+            carouselSlide.style.transform = 'translateX(' + (-newSize * counter) + 'px)';
+            setTimeout(() => {
+                carouselSlide.style.transition = "transform 0.5s ease-in-out";
+            }, 100);
+        });
+    }
