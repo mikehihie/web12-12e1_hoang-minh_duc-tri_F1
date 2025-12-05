@@ -4,7 +4,7 @@
 const navComponent = `
     <nav>
         <a href="index.html" class="logo-container">
-            <img class="f1-logo-svg" src="/asset/img/F1.svg.png" alt="F1 Logo">
+            <img class="f1-logo-svg" src="asset/img/F1.svg.png" alt="F1 Logo">
             <div class="logo"></div>
         </a>
         <ul>
@@ -93,29 +93,55 @@ function initMain() {
     const lightbox = document.getElementById("lightbox");
     if (lightbox) {
         const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxVideo = document.getElementById("lightbox-video");
         const captionText = document.getElementById("caption");
         const closeBtn = document.querySelector(".close");
         const galleryItems = document.querySelectorAll(".gallery-item");
+
+        const closeLightbox = function() {
+            lightbox.style.display = "none";
+            // Stop video
+            if (lightboxVideo) {
+                lightboxVideo.src = "";
+            }
+        };
 
         galleryItems.forEach(item => {
             item.addEventListener('click', function() {
                 const img = this.querySelector('img');
                 const title = this.querySelector('.gallery-title');
+                const videoId = this.getAttribute('data-video-id');
 
-                if (img && title) {
+                if (title) {
                     lightbox.style.display = "flex";
-                    lightboxImg.src = img.src;
                     captionText.innerText = title.innerText;
+
+                    if (videoId && lightboxVideo) {
+                        // Video mode
+                        lightboxImg.style.display = "none";
+                        lightboxVideo.style.display = "block";
+                        lightboxVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                    } else if (img) {
+                        // Image mode
+                        if (lightboxVideo) {
+                            lightboxVideo.style.display = "none";
+                            lightboxVideo.src = "";
+                        }
+                        lightboxImg.style.display = "block";
+                        lightboxImg.src = img.src;
+                    }
                 }
             });
         });
 
         if (closeBtn) {
-            closeBtn.onclick = function() { lightbox.style.display = "none"; }
+            closeBtn.onclick = closeLightbox;
         }
 
         lightbox.onclick = function(e) {
-            if(e.target !== lightboxImg) { lightbox.style.display = "none"; }
+            if(e.target !== lightboxImg && e.target !== lightboxVideo) {
+                closeLightbox();
+            }
         }
     }
 
