@@ -1,6 +1,3 @@
-/* main.js */
-
-// NAV
 const navComponent = `
     <nav>
         <a href="index.html" class="logo-container">
@@ -17,7 +14,6 @@ const navComponent = `
     </nav>
 `;
 
-// footer
 const footerComponent = `
     <section id="contact" style="border-top: 1px solid var(--f1-gray);">
         <h2>Liên Hệ & Góp Ý</h2>
@@ -48,36 +44,34 @@ const footerComponent = `
     </footer>
 `;
 
-// nav link active highlight
 function highlightActiveLink() {
-    const currentPage = window.location.pathname.split("/").pop(); // Lấy tên file (vd: teams.html)
+    const currentPage = window.location.pathname.split("/").pop(); 
     const navLinks = document.querySelectorAll('nav ul li a');
 
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
-        // Nếu tên file khớp hoặc đang ở trang chủ (index.html hoặc rỗng)
+        
         if (linkPage === currentPage || (currentPage === "" && linkPage === "index.html")) {
             link.classList.add('active');
         }
     });
 }
 
-// Hàm khởi tạo chính
 function initMain() {
     
-    // A. Chèn Nav
+    
     const navPlaceholder = document.getElementById("global-nav");
     if (navPlaceholder) {
         navPlaceholder.innerHTML = navComponent;
-        highlightActiveLink(); // Gọi hàm tô đậm link
+        highlightActiveLink(); 
     }
 
-    // B. Chèn Footer
+    
     const footerPlaceholder = document.getElementById("global-footer");
     if (footerPlaceholder) {
         footerPlaceholder.innerHTML = footerComponent;
         
-        // Xử lý gửi form
+        
         const contactForm = document.querySelector(".contact-form");
         if (contactForm) {
             contactForm.addEventListener("submit", function(event) {
@@ -89,7 +83,7 @@ function initMain() {
         }
     }
 
-    // C. Xử lý Lightbox (Gallery)
+    
     const lightbox = document.getElementById("lightbox");
     if (lightbox) {
         const lightboxImg = document.getElementById("lightbox-img");
@@ -100,7 +94,7 @@ function initMain() {
 
         const closeLightbox = function() {
             lightbox.style.display = "none";
-            // Stop video
+            
             if (lightboxVideo) {
                 lightboxVideo.src = "";
             }
@@ -117,12 +111,12 @@ function initMain() {
                     captionText.innerText = title.innerText;
 
                     if (videoId && lightboxVideo) {
-                        // Video mode
+                        
                         lightboxImg.style.display = "none";
                         lightboxVideo.style.display = "block";
                         lightboxVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
                     } else if (img) {
-                        // Image mode
+                        
                         if (lightboxVideo) {
                             lightboxVideo.style.display = "none";
                             lightboxVideo.src = "";
@@ -152,3 +146,21 @@ if (document.readyState === 'loading') {
 } else {
     initMain();
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const driverGrid = document.querySelector('.driver-grid');
+    if (driverGrid) {
+        const leftBtn = document.querySelector('.scroll-btn.left');
+        const rightBtn = document.querySelector('.scroll-btn.right');
+        
+        
+        const scrollAmount = driverGrid.querySelector('.driver-card').offsetWidth + 20;
+
+        leftBtn.addEventListener('click', () => {
+            driverGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        rightBtn.addEventListener('click', () => {
+            driverGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+});
